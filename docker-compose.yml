@@ -1,0 +1,13 @@
+services:
+  feature_selection:
+    env_file:
+      - devcontainer.env
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    image: feature_selection
+    volumes:
+      - ./feature_selection:/feature_selection
+    ports:
+      - 8888:8888
+    command: "jupyter notebook --notebook-dir=/feature_selection --ip=0.0.0.0 --port=8888 --no-browser --allow-root --ServerApp.token='' --ServerApp.password=''"
