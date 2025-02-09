@@ -36,7 +36,7 @@
             "type": "shell",
             "command": "kaggle datasets download ${input:userName}/${input:datasetName} -p ${input:datasetName} --unzip --force",
             "options": {
-                "cwd": "/kaggle/input"
+                "cwd": "${workspaceFolder}/input"
             },
             "problemMatcher": []
         },
@@ -45,16 +45,16 @@
             "type": "shell",
             "command": "kaggle competitions download -c ${input:competition} && unzip -d ./${input:competition} -q ${input:competition}.zip && rm ${input:competition}.zip",
             "options": {
-                "cwd": "/kaggle/input"
+                "cwd": "./input"
             },
             "problemMatcher": []
-        }
+        },
         {
             "label": "kaggle dataset search",
             "type": "shell",
-            "command": "kaggle datasets list -s${input:keyword}",
+            "command": "kaggle datasets list -s ${input:keyword}",
             "options": {
-                "cwd": "/kaggle/input"
+                "cwd": "${workspaceFolder}"
             },
             "problemMatcher": []
         }
@@ -65,7 +65,7 @@
             "type": "pickString",
             "description": "Select directory with a project",
             "options": [
-                "test_project"
+                "input"
             ]
         },
         {
