@@ -1,7 +1,8 @@
 services:
   feature_selection:
     env_file:
-      - devcontainer.env
+      - path: ./devcontainer.env
+        required: false #ignore if not find
     build: 
       context: .
       dockerfile: Dockerfile
