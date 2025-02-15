@@ -172,3 +172,8 @@ cython_debug/
 
 # Enviroment variables
 devcontainer.env
+
+# Datasets
+dataset_1.csv
+dataset_2.csv
+datasets.zip
